@@ -1,5 +1,4 @@
 #libs
-
 import wave
 from scipy.io import wavfile
 import os as os
@@ -12,7 +11,6 @@ import sys
 import resampy
 import librosa
 from tensorflow.keras import layers
-
 
 # Helper libraries
 import numpy as np
@@ -30,8 +28,8 @@ print(tf.__version__)
 lengthFrame = 1
 model_vggish = hub.load('https://tfhub.dev/google/vggish/1')
 
-X_train = np.load('X_train.npy')
-y_train = np.load('y_train.npy')
+X_train = np.load('./X_train.npy')
+y_train = np.load('./y_train.npy')
 '''
 h = np.isnan(X_train)
 h = np.where(h==True)
@@ -56,8 +54,7 @@ print('y_train: ', y_train.shape)
 
 if X_train.ndim < 4:
     X_train_shaped = np.expand_dims(X_train, axis=2)
-
-
+    
 print(X_train_shaped.shape)
 
 #Make Label data 'class num' -> 'One hot vector'
