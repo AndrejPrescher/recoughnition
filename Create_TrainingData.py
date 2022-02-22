@@ -42,7 +42,6 @@ for i in range(anzahl):
     
 Label_True=np.ones(chunk_mit.shape[0])
 
-
 chunk_ohne=np.zeros((anzahl,128))
 
 for i in range(anzahl):
@@ -52,11 +51,6 @@ for i in range(anzahl):
     chunk_ohne[i]=mv
     
 Label_False=np.zeros(chunk_ohne.shape[0])
-
-
-print(chunk_mit.shape)
-
-print(chunk_ohne.shape)
 
 X_train, y_train=np.concatenate((chunk_mit,chunk_ohne)),np.concatenate((Label_True,Label_False)) 
 
