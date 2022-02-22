@@ -33,6 +33,8 @@ model_vggish = hub.load('https://tfhub.dev/google/vggish/1')
 #model mit conv1d
 from tensorflow.keras import Input, layers
 
+X_train_shaped = np.load('./X_train_prep.npy')
+train_label = np.load('./y_train_prep.npy')
 
 # Parameters
 lr = 0.0001
@@ -82,3 +84,5 @@ history = model.fit(X_train_shaped, train_label,
           epochs=400,
           verbose=1,
           shuffle = True)
+
+model.save()
