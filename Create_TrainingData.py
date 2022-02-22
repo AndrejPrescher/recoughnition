@@ -1,5 +1,4 @@
 #libs
-
 import wave
 from scipy.io import wavfile
 import os as os
@@ -54,5 +53,5 @@ Label_False=np.zeros(chunk_ohne.shape[0])
 
 X_train, y_train=np.concatenate((chunk_mit,chunk_ohne)),np.concatenate((Label_True,Label_False)) 
 
-np.save('X_train.npy', X_train)
-np.save('y_train.npy', y_train)
+np.save('./X_train.npy', X_train)
+np.save('./y_train.npy', y_train)
