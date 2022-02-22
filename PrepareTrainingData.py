@@ -60,3 +60,6 @@ print(X_train_shaped.shape)
 #Make Label data 'class num' -> 'One hot vector'
 train_label = keras.utils.to_categorical(y_train, 2)
 train_label=np.fliplr(train_label)
+
+np.save('./X_train_prep.npy', X_train_shaped)
+np.save('./y_train_prep.npy', train_label)
